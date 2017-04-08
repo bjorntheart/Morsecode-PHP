@@ -7,8 +7,9 @@ The repository is home to the following coding tasks.
 
 Both tasks consist of PHP files and their respective tests.
 
-The Morsecode component has an additional PHP file called `stdin.php` that takes input in the form of plain text 
-or a file path from `STDIN`. `stdin.php` does not have an associated test file.
+The Morsecode component has 2 additional PHP files called `stdin.php` and `stdinFunctions.php`. Some functions 
+in `stdin.php` where extracted into `stdinFunctions.php` to make them testable. `stdin.php` takes input in the form of 
+plain text or a file path from `STDIN`.
 
 ## Getting Started
 
@@ -67,7 +68,8 @@ Prompt for file input
 
 #### Overview
 
-There are tests for both components of the coding task and are written in [phpspec](http://www.phpspec.net/en/stable/).
+The tests for the tasks where written in [phpspec](http://www.phpspec.net/en/stable/) and 
+[PHPUnit](https://phpunit.de/manual/5.7/en/index.html).
 
 #### Flatten an Arbitrarily Nested Integer Array
 
@@ -84,7 +86,7 @@ It is located here:
 
 #### Morsecode Translator and Obfuscator
 
-The Morsecode Translator and Obfuscator has 2 sets of tests.
+The Morsecode Translator and Obfuscator has 2 sets of tests for their respective classes.
 
 They are located here:
 
@@ -101,11 +103,29 @@ Run the _MorseCodeObfuscator_ tests:
 bin/phpspec run spec/MorseCodeObfuscatorSpec.php
 ```
 
-#### All tests
+##### STDIN PHP Script for Morsecode Translator and Obfuscator
+
+Tests for `stdinFunctions.php` are written in PHPUnit and is located here:
+
+* `tests/StdinTest.php`
+
+Run the _stdinFunctions_ tests:
+```
+bin/phpunit --bootstrap vendor/autoload.php tests/StdinTest.php
+```
+
+#### All phpspec tests
 
 Run _all_ tests:
 ```
 bin/phpspec run
+```
+
+#### All PHPUnit tests
+
+Run _all_ tests:
+```
+bin/phpunit --bootstrap vendor/autoload.php tests
 ```
 
 ## Authors
