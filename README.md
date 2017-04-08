@@ -44,7 +44,7 @@ When running the script you will be prompted to enter `1` or `2` depending on th
 `1` is for plain text input and `2` is for file input.
 
 Prompt
-![](https://github.com/bjorntheart/php-coding-task/screenshots/prompt.png)
+![](screenshots/prompt.png)
 
 Both options has the ability to accept an arbitrarily amount of input parameters. 
 
@@ -53,16 +53,16 @@ To translate an arbitrary amount of input, follow these instructions:
 **Plain text input** - For the plain text input, run the `src/stdin.php` script and follow the on screen instructions
 
 Prompt for plain text input
-![](https://github.com/bjorntheart/php-coding-task/screenshots/prompt-answer-text-input.png)
+![](prompt-answer-text-input.png)
 
 Prompt to parse another plain text input
-![](https://github.com/bjorntheart/php-coding-task/screenshots/prompt-answer-text-input-more.png)
+![](screenshots/prompt-answer-text-input-more.png)
 
 **File input** - For file input, add additional lines of plain text to `src/input.txt` and run the `src/stdin.php` script. Then choose 
 option `2` for file input. The program will read all the lines from the `src/input.txt` file and parse it.
 
 Prompt for file input
-![](https://github.com/bjorntheart/php-coding-task/screenshots/promt-answer-file-input.png)
+![](screenshots/promt-answer-file-input.png)
 
 ### Running Tests
 
