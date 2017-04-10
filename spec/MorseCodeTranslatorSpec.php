@@ -29,17 +29,60 @@ class MorseCodeTranslatorSpec extends ObjectBehavior
         $this->dictionary()->shouldHaveCount(38);
     }
 
-    function it_should_handle_any_invalid_latin_character_input()
+    function it_should_have_an_index_smaller_than_characters_count()
+    {
+        $index = 4;
+        $chars = str_split(static::$hello);
+        $this->indexInBounds($chars, $index)->shouldEqual(true);
+    }
+
+    function it_should_not_have_an_index_bigger_than_characters_count()
+    {
+        $index = 6;
+        $chars = str_split(static::$hello);
+        $this->indexInBounds($chars, $index)->shouldEqual(false);
+    }
+
+    function it_should_have_character_in_dictionary()
+    {
+        $char = 'A';
+        $this->isInDictionary($char)->shouldEqual(true);
+    }
+
+    function it_should_not_have_character_in_dictionary()
+    {
+        $char = ' ';
+        $this->isInDictionary($char)->shouldEqual(false);
+    }
+
+    function it_should_add_pipe_character_to_morse_code_string()
+    {
+        $chars = str_split(static::$hello);
+        $this->canAddPipeCharacter($chars, 0)->shouldEqual(true);
+    }
+
+    function it_should_not_add_pipe_character_to_morse_code_string()
+    {
+        $chars = str_split(static::$iAmInTrouble);
+        $this->canAddPipeCharacter($chars, 0)->shouldEqual(false);
+    }
+
+    function it_should_validate_a_latin_string_of_characters()
+    {
+        $this->shouldNotThrow('InvalidArgumentException')->duringValidateLatinString(static::$hello);
+    }
+
+    function it_should_take_exception_to_translate_invalid_characters()
     {
         foreach(static::$invalidCharacters as $invalidCharacter)
         {
-            $this->shouldThrow('InvalidArgumentException')->duringTranslate("HEL{$invalidCharacter}LO");
+            $this->shouldThrow('InvalidArgumentException')->duringValidateLatinString("HEL{$invalidCharacter}LO");
         }
     }
 
-    function it_should_allow_for_translation_of_uppercase_latin_characters()
+    function it_should_gracefully_handle_translation_of_lowercase_latin_characters()
     {
-        $this->shouldNotThrow('InvalidArgumentException')->duringTranslate('HELLO');
+        $this->shouldNotThrow('InvalidArgumentException')->duringTranslate('hello');
     }
 
     function it_should_not_have_new_line_characters_in_the_morse_code()
