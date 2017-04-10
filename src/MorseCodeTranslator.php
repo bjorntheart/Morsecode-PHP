@@ -6,12 +6,6 @@
 
 class MorseCodeTranslator
 {
-    private static $invalidCharacters = [
-        '"', '\'', '!', '@', '#', '$', '%', '^', '&', '*',
-        '(', ')', '-', '_', '+', '=', '{', '}', '[', ']',
-        ':', ';', '|', '\\', '~', '`', '<', '>', '?', '/'
-    ];
-
     private static $dictionary = [
         'A' => '.-',
         'B' => '-...',
