@@ -53,7 +53,7 @@ To translate an arbitrary amount of input, follow these instructions:
 **Plain text input** - For the plain text input, run the `src/stdin.php` script and follow the on screen instructions
 
 Prompt for plain text input
-![](prompt-answer-text-input.png)
+![](screenshots/prompt-answer-text-input.png)
 
 Prompt to parse another plain text input
 ![](screenshots/prompt-answer-text-input-more.png)
