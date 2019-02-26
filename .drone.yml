@@ -10,4 +10,4 @@ steps:
 - name: test
   image: php:7
   commands:
-  - vendor/bin/phpunit --bootstrap vendor/autoload.php tests
+  - bin/phpunit --bootstrap vendor/autoload.php tests
